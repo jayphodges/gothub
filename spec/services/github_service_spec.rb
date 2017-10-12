@@ -16,7 +16,7 @@ describe GithubService do
     context "#user_info" do
       it "returns a valid user collection" do
 
-          expect(user_info["id"]).to eq("something")
+          expect(user_info["id"]).to eq(25351111)
         end
       end
 

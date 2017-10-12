@@ -8,11 +8,27 @@ class GithubService
   end
 
   def user_info
-    JSON.parse(@conn.get("/users/jayphodges").body)
+    parse("/users/jayphodges")
   end
 
   def starred_repos
+    parse("/users/jayphodges/starred").count
+  end
 
+  def followers
+    parse("/users/jayphodges/followers").count
+  end
+
+  def following
+    parse("/users/jayphodges/following").count
+  end
+
+  def repos
+    parse("/users/jayphodges/repos")
+  end
+
+  def parse(this)
+    JSON.parse(@conn.get("#{this}").body)
   end
 
 end
