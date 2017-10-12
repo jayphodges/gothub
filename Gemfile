@@ -18,8 +18,15 @@ gem 'omniauth-github'
 gem 'figaro'
 
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'pry'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
+# 
+# group :test do
+#   gem 'vcr'
+#   gem 'webmock'
+# end
 
 group :development do
   gem 'web-console', '>= 3.3.0'

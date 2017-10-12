@@ -1,14 +1,18 @@
-class Gothub
+class GithubService
 
   def initialize
     @conn = Faraday.new(url: "https://api.github.com") do |faraday|
-      faraday.headers["X-API-Key"] = ENV["propublica_key"]
+      faraday.headers["access_token"] = ENV['GITHUB_KEY']
       faraday.adapter  Faraday.default_adapter
     end
   end
 
   def user_info
-    JSON.parse(@conn.get(https://api.github.com/users/jayphodges)).map
+    JSON.parse(@conn.get("/users/jayphodges").body)
+  end
+
+  def starred_repos
+
   end
 
 end
